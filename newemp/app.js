@@ -10,3 +10,4 @@ app.get("/",function(req,res){
     res.render("emphome")
 })
 app.use("/emp",r)
+
