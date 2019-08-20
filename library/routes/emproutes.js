@@ -1,7 +1,8 @@
 var express=require('express')
 var m=require('mongoose')
-var bodyparser=require('body-parser')
+
 const r=express.Router();
+var bodyparser=require('body-parser')
 r.use(bodyparser.urlencoded({extended:true}));
 
 var url="mongodb://localhost/emp1";

@@ -15,7 +15,18 @@ mongo.connect(url,function(err){
         console.log("DataBase Connected")
     }
 })
+r.get("/addbook",function(req,res){
+
+    res.render("bookadd",{pagetitle:"library",arr:[{link:"/books",title:"Books"},{link:"/author",title:"Author"},{link:"/books/addbook",title:"New book"}]})
+
+    
+    
+})
 r.get("/",function(req,res){
-    res.render("books",{pagetitle:"Books",barray:barray,arr:[{link:"/books",title:"Books"},{link:"/author",title:"Author"}]})
+    books.find({},function(err,result){
+     
+        res.render("books",{pagetitle:"Books",barray:result,arr:[{link:"/books",title:"Books"},{link:"/author",title:"Author"}]})
+    })
+    
 })
 module.exports=r;
